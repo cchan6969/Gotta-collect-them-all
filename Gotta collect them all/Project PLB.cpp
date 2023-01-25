@@ -25,9 +25,8 @@ int titleScream();
 int main() //Mutasim
 {
 	cout << "**********************************************************" << endl
-		<< "         * Welcome to Singapore National Library! *         " << endl
-		<< "**********************************************************" << endl;
-
+		 << "         * Welcome to Singapore National Library! *         " << endl
+		 << "**********************************************************" << endl;
 	option();
 	return 0;
 }
