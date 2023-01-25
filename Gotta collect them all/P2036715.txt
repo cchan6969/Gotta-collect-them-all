@@ -1,0 +1,10 @@
+Bulbasaur 1
+Venusaur 1
+Charmander 0
+Charizard 0
+Squirtle  0
+Blastoise 0
+Pikachu 0
+Slowpoke 2
+Mewtwo 0 
+Mew 0

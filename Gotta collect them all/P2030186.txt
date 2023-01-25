@@ -1,0 +1,10 @@
+Bulbasaur 0
+Venusaur 700
+Charmander 1
+Charizard 1
+Squirtle 497
+Blastoise 1
+Pikachu 200
+Slowpoke 100
+Mewtwo 100
+Mew 100
