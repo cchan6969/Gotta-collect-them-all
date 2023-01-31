@@ -1,2 +1,5 @@
 # Gotta collect them all
- CProgramming final project
+
+Final project for SP DMRO module: Computer Programming in C++
+
+Done by: Zhi Hao, Mutasim, Lei Lei and Carl
