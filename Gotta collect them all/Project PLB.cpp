@@ -2,9 +2,10 @@
 #include<iomanip>
 #include<string>
 #include<fstream>
-#include<Windows.h>
+#include<emscripten.h>
 #include<stdio.h>
 using namespace std;
+
 void option();
 void signUp();
 void createCardFile(string usern);
@@ -21,6 +22,7 @@ void logOut();
 void Requim(string usern);
 void charlesDarwin(int row1, int row2, string poki, string usern);
 int titleScream();
+void emscripten_sleep(unsigned int);
 
 int main() //Mutasim
 {
@@ -84,7 +86,8 @@ void signUp() //Mutasim
 		cin >> passd;
 
 		cout << "\n**********   Loading   **********" << endl;
-		Sleep(5000);
+		//Sleep(5000); (c++ version)
+		emscripten_sleep(5000); //(emscripten version)
 
 		if (usern.length() != 8 || usern.substr(0, 1) != "P")
 		{
@@ -142,7 +145,8 @@ void login() //Mutasim
 
 		system("cls");
 		cout << "\n**********   Loading   **********";
-		Sleep(5000);
+		//Sleep(5000);
+	 	emscripten_sleep(5000); //(emscripten version)
 
 		Usersfile.open("User details.txt");
 		if (!Usersfile)
@@ -216,12 +220,13 @@ void mainMenu(string usern) //Mutasim //Rakesh
 			system("cls");
 			Requim(usern);
 		}
-		else if (choice = 7)
+		else if (choice == 7)
 		{
 			system("cls");
 			logOut();
 		}
-		Sleep(500);
+		//Sleep(500);
+		emscripten_sleep(5000); //(emscripten version)
 		cout << "\nPress any key and then Enter to continue: ";
 		cin >> leave;
 		system("cls");
