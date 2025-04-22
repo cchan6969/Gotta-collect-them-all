@@ -22,46 +22,30 @@ def login():
         menu()
 def signup():
     print("Please key in new username (Student Admin Number) and password")
-    
     while True:
         username=input("Username: ")
         if len(username)!=8 or username[0]!="P":
             print("Invalid Username. Please ensure the length is 8 characters long and starts with a letter 'P': ")
         else:
             break
-    usertxt=open(username,"x")
-    print("account creation successful")
+    profile=username + ".txt"
+    password=input("Password: ")
+    with open("PLB python/userfile.txt", "a") as f:
+        f.write(username + "\n")
+        f.write(password + "\n")
+    with open("PLB python/" + profile, "x") as f:
+        f.write(username + "\n")
+        f.write(password + "\n")
+    print("Your account has been successfully created!")
     login()
 
 def menu():
-    print("option2")
-
+    print("Please key in your username and password.")
+    while 1:
+        username=input("Username: ")
+        if len(username)!=8 or username[0]!="P":
+            print("Invalid Username. Please ensure the length is 8 characters long and starts with a letter 'P': ")
+        else:
+            break
 login()
 
-"""
-string usern, passd, inuser, inpass;
-int no;
-fstream Usersfile;
-char found = 'N';
-bool match = false;
-
-while (!(cin >> no) || (no < 1 || no>2))
-{
-    // Keeps prompting the user to key in the correct option
-    cout << "\nInvalid option. Please try again: ";
-    cin.clear();
-    cin.ignore(123, '\n');
-}
-
-if (no == 1)
-{
-    system("cls");
-    signUp();
-}
-
-else if (no == 2)
-{
-    system("cls");
-    login();
-}
-"""
