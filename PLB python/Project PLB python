@@ -1,0 +1,67 @@
+def login():
+    print("""   
+    **********************************************************
+            * Welcome to Singapore National Library! *      
+    **********************************************************""")
+    print("""
+    1) Sign Up
+    2) Login into your account""") 
+    
+    while True:
+        try:
+            login = int(input("Please select one of the options above:"))
+            if login == 1 or login == 2:
+                break
+            else:   
+                print("Invalid Number, Correct Class Please try again: ")
+        except ValueError:
+                print("Invalid Option, Class error, Please try again: ")
+    if login == 1:
+        signup()
+    elif login == 2:
+        menu()
+def signup():
+    print("Please key in new username (Student Admin Number) and password")
+    
+    while True:
+        username=input("Username: ")
+        if len(username)!=8 or username[0]!="P":
+            print("Invalid Username. Please ensure the length is 8 characters long and starts with a letter 'P': ")
+        else:
+            break
+    usertxt=open(username,"x")
+    print("account creation successful")
+    login()
+
+def menu():
+    print("option2")
+
+login()
+
+"""
+string usern, passd, inuser, inpass;
+int no;
+fstream Usersfile;
+char found = 'N';
+bool match = false;
+
+while (!(cin >> no) || (no < 1 || no>2))
+{
+    // Keeps prompting the user to key in the correct option
+    cout << "\nInvalid option. Please try again: ";
+    cin.clear();
+    cin.ignore(123, '\n');
+}
+
+if (no == 1)
+{
+    system("cls");
+    signUp();
+}
+
+else if (no == 2)
+{
+    system("cls");
+    login();
+}
+"""
