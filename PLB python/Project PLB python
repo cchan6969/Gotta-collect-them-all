@@ -9,7 +9,7 @@ def login():
     
     while True:
         try:
-            login = int(input("Please select one of the options above:"))
+            login = int(input("Please select one of the options above: "))
             if login == 1 or login == 2:
                 break
             else:   
@@ -31,14 +31,13 @@ def signup():
     profile=username + ".txt"
     password=input("Password: ")
     with open("PLB python/userfile.txt", "a") as f:
-        f.write(username + "\n")
+        f.write(username + " ")
         f.write(password + "\n")
     with open("PLB python/" + profile, "x") as f:
         f.write(username + "\n")
         f.write(password + "\n")
     print("Your account has been successfully created!")
     login()
-
 def menu():
     print("Please key in your username and password.")
     while 1:
