@@ -19,7 +19,7 @@ def login():
     if login == 1:
         signup()
     elif login == 2:
-        menu()
+        signin()
 def signup():
     print("Please key in new username (Student Admin Number) and password")
     while True:
@@ -38,13 +38,34 @@ def signup():
         f.write(password + "\n")
     print("Your account has been successfully created!")
     login()
-def menu():
+def signin():
     print("Please key in your username and password.")
     while 1:
         username=input("Username: ")
         if len(username)!=8 or username[0]!="P":
             print("Invalid Username. Please ensure the length is 8 characters long and starts with a letter 'P': ")
         else:
-            break
+            with open("PLB python/userfile.txt", "r") as f:
+                idCheck = f.read().splitlines()
+            if username in idCheck:
+                password=input("Password: ")
+                if password in idCheck:
+                    menu()
+                else:
+                  print("Invalid Password. Please try again.")  
+            else:
+                print("Invalid Username. Please try again.")
+def menu():
+    print("""Welcome!
+		********** Main Menu **********
+		1) Book status
+		2) Borrow books
+		3) Check number of books borrowed
+		4) Check number of cards in deck
+		5) Draw cards
+		6) Evolution
+		7) Logout""")
+    while 1:
+	    menu=input("Please enter your choice: ")
 login()
 
